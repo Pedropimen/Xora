@@ -3,15 +3,17 @@ import { Element } from "react-scroll";
 import clsx from "clsx";
 import Button from "../components/Button.jsx";
 import { plans } from "../constants/index.js";
+import CountUp from "react-countup";
 
 const Pricing = () => {
   const [monthly, setMonthly] = useState(false);
+
   return (
     <section className="pricing">
       <Element>
         <div className="container">
           <div
-            className="max-w-960 pricing-head_before relative max-auto border-l border-r border-s2 bg-s1/50 pb-40
+            className="max-w-960 pricing-head_before relative mx-auto border-l border-r border-s2 bg-s1/50 pb-40
           pt-28 max-xl:max-w-4xl max-lg:border-none max-md:pb-32 max-md:pt-16"
           >
             <h3
@@ -76,7 +78,7 @@ const Pricing = () => {
               >
                 {index === 1 && (
                   <div
-                    className="g4 absolute h-330 left-0 righ-0 top-0 z-1
+                    className="g4 absolute h-330 left-0 right-0 top-0 z-1
                 rounded-tl-3xl rounded-tr-3xl"
                   />
                 )}
@@ -96,6 +98,72 @@ const Pricing = () => {
                     )}
                   />
                 </div>
+                <div
+                  className={clsx(
+                    "relative flex flex-col items-center",
+                    index === 1 ? "pt-24" : "pt-12",
+                  )}
+                >
+                  <div
+                    className={clsx(
+                      "small-2 rounded-20 relative z-2 mx-auto mb-6 border-2 px-4 py-1.5 uppercase",
+                      index === 1 ? "border-p3 text-p3" : "border-p1 text-p1",
+                    )}
+                  >
+                    {plan.title}
+                  </div>
+                  <div className="relative z-2 flex items-center justify-center">
+                    <div
+                      className={clsx(
+                        "h-num flex items-start",
+                        index === 1 ? "text-p3" : "text-p4",
+                      )}
+                    >
+                      $
+                      <CountUp
+                        start={plan.princeMonthly}
+                        end={monthly ? plan.priceMonthly : plan.priceYearly}
+                        duration={0.4}
+                        useEasing={false}
+                        preserveValue
+                      />
+                    </div>
+                    <div className="small-1 relative top-3 uppercase">/ mo</div>
+                  </div>
+                </div>
+
+                <div
+                  className={clsx(
+                    "body-1 relative z-2 mb-10 w-full " +
+                      "border-b-s2 pb-9 text-center text-p4",
+                    index === 1 && "border-b",
+                  )}
+                >
+                  {plan.caption}
+                </div>
+                <ul className="mx-auto space-y-4 xl:px-7">
+                  {plan.features.map((feature) => (
+                    <li
+                      key={feature}
+                      className="relative flex items-center gap-5"
+                    >
+                      <img
+                        src={"/images/check.png"}
+                        alt="check"
+                        className="size-10 object-contain"
+                      />
+                      <p className="flex-1">{feature}</p>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-10 flex w-full justify-center">
+                  <Button icon={plan.icon}> Vamos começar</Button>
+                </div>
+                {index === 1 && (
+                  <p className="small-compact mt-9 text-center text-p3  before:mx-2.5 before:content-['-'] after:mx-2.5 after:content-['-'] ">
+                    Oferta por tempo limitado
+                  </p>
+                )}
               </div>
             ))}
           </div>
