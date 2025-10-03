@@ -156,3 +156,54 @@ export const plans = [
     logo: "/images/plan-3.png",
   },
 ];
+
+export const testimonials = [
+  {
+    id: "0",
+    name: "Jessica Saunders",
+    role: "Globalnomads",
+    avatarUrl: "/images/testimonials/jessica-saunders.png",
+    comment:
+      "O suporte ao cliente da Xora é incomparável! Eles são como meus super-heróis da tecnologia, sempre presentes quando preciso.",
+  },
+  {
+    id: "1",
+    name: "Mark Erixon",
+    role: "Vid capital intl",
+    avatarUrl: "/images/testimonials/mark-erixon.png",
+    comment:
+      "Eu estava cético no início, mas agora não consigo imaginar nossas operações de conteúdo sem ele. É realmente impactante.",
+  },
+  {
+    id: "2",
+    name: "Melanie Hurst",
+    role: "Cyberleap",
+    avatarUrl: "/images/testimonials/melanie-hurst.png",
+    comment:
+      "Adotar este software foi super fácil. Ele tornou as tarefas do dia a dia muito mais simples.",
+  },
+  {
+    id: "3",
+    name: "Alicia Barker",
+    role: "Cyberleap",
+    avatarUrl: "/images/testimonials/alicia-barker.png",
+    comment:
+      "O recurso de análise é como ter um vidente pessoal. Foi fundamental para orientar nossas decisões de negócio.",
+  },
+  {
+    id: "4",
+    name: "Becky Snider",
+    role: "Floclips",
+    avatarUrl: "/images/testimonials/becky-snider.png",
+    comment:
+      "Mudei para a Xora no mês passado e já estou vendo resultados. Melhor decisão para nossa equipe!",
+  },
+  {
+    id: "5",
+    name: "Jim Bradley",
+    role: "Vid capital intl",
+    avatarUrl: "/images/testimonials/jim-bradley.png",
+    comment:
+      "O aumento de eficiência é inegável. Esta plataforma transformou nosso fluxo de trabalho para sempre.",
+  },
+];
